@@ -1,16 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-<h1>Register</h1>
-<form method="POST">
+{% extends 'base/main.html' %}
+{% block content %}
+<div class="header-bar"><h1>Register</h1></div>
+<div class="card-body"><form method="POST">
     {% csrf_token %}
-    {{ form.as_p }}
-    <input type="submit" value="Register">
+    <label for="">{{ form.username.label }}</label>
+    {{ form.username }}
+
+    <label for="">{{ form.password1.label }}</label>
+    {{ form.password1 }}
+
+    <label for="">{{ form.password2.label }}</label>
+    {{ form.password2 }}
+    <input style="margin-top:10px;" class="button" type="submit" value="Registrarse">
 </form>
-<p>Ya tienes una cuenta? <a href="">Login</a></p>
-</body>
-</html>
+<p>Ya tienes una cuenta? <a href="{% url 'login' %}">Login</a></p></div>
+
+
+{% endblock %}
