@@ -5,15 +5,12 @@
     <title>Title</title>
 </head>
 <body>
-
-<h1>Login</h1>
+<h1>Register</h1>
 <form method="POST">
     {% csrf_token %}
     {{ form.as_p }}
-    <input type="submit" value="Login">
+    <input type="submit" value="Register">
 </form>
-
-<p>No tienes una cuenta? <a href="{% url '/register' %}">Registrarse</a></p>
-
+<p>Ya tienes una cuenta? <a href="">Login</a></p>
 </body>
 </html>
